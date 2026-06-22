@@ -1,0 +1,42 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Product } from "@/types/product";
+
+export default function ProductCard({ product }: { product: Product }) {
+  return (
+    <Link
+      href={`/products/${product.slug}`}
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 transition-all hover:border-zinc-700 hover:shadow-xl hover:shadow-black/40"
+    >
+      <div className="aspect-square overflow-hidden bg-zinc-800">
+        <Image
+          src={product.images[0]}
+          alt={product.name}
+          width={400}
+          height={400}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-2 p-4">
+        <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+          {product.category}
+        </span>
+        <h3 className="text-sm font-semibold text-white leading-tight group-hover:text-zinc-300 transition-colors">
+          {product.name}
+        </h3>
+        <p className="text-xs text-zinc-500 line-clamp-2 leading-relaxed">
+          {product.description}
+        </p>
+        <div className="mt-auto pt-2 flex items-center justify-between">
+          <span className="text-lg font-bold text-white">
+            {product.price.toLocaleString("ar-EG")}{" "}
+            <span className="text-xs font-normal text-zinc-500">ج.م</span>
+          </span>
+          <span className="text-xs text-emerald-500 font-medium group-hover:text-emerald-400 transition-colors">
+            احجز الآن
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}

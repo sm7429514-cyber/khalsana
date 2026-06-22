@@ -1,0 +1,7 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#18181B"/>
+  <rect x="80" y="80" width="240" height="240" rx="20" stroke="#3F3F46" stroke-width="4"/>
+  <path d="M160 200C160 177.909 177.909 160 200 160C222.091 160 240 177.909 240 200C240 222.091 222.091 240 200 240C177.909 240 160 222.091 160 200Z" stroke="#3F3F46" stroke-width="4"/>
+  <path d="M200 140V180M200 220V260M160 200H180M220 200H260" stroke="#3F3F46" stroke-width="4" stroke-linecap="round"/>
+  <text x="200" y="310" text-anchor="middle" fill="#52525B" font-family="Arial" font-size="16">صورة المنتج</text>
+</svg>
