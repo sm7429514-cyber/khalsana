@@ -2,23 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Plus, Edit, Trash2, LogOut, Package } from "lucide-react";
 import { Product } from "@/types/product";
 
 export default function AdminDashboard() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
-    const t = localStorage.getItem("primeadmin_token");
-    setToken(t);
-    if (!t) {
-      setLoading(false);
-      return;
-    }
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
@@ -28,9 +19,11 @@ export default function AdminDashboard() {
       .catch(() => setLoading(false));
   }, []);
 
+  const token = typeof window !== "undefined" ? localStorage.getItem("primeadmin_token") : null;
+
   function handleLogout() {
     localStorage.removeItem("primeadmin_token");
-    router.refresh();
+    window.location.href = "/primeadmin";
   }
 
   async function handleDelete(slug: string) {
@@ -42,22 +35,6 @@ export default function AdminDashboard() {
     if (res.ok) {
       setProducts(products.filter((p) => p.slug !== slug));
     }
-  }
-
-  if (!token) {
-    return (
-      <div className="mx-auto max-w-7xl px-4 py-12 text-center">
-        <Package className="mx-auto h-12 w-12 text-zinc-600 mb-4" />
-        <h1 className="text-xl font-bold text-white mb-2">لوحة التحكم</h1>
-        <p className="text-sm text-zinc-500 mb-4">الرجاء تسجيل الدخول أولاً</p>
-        <Link
-          href="/primeadmin"
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-2.5 text-sm font-medium text-black hover:bg-zinc-200 transition-colors"
-        >
-          تسجيل الدخول
-        </Link>
-      </div>
-    );
   }
 
   if (loading) {
