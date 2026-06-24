@@ -84,19 +84,19 @@ export default function AddProductPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-8 flex items-center gap-4">
-        <Link href="/primeadmin" className="text-zinc-400 hover:text-white transition-colors">
+        <Link href="/primeadmin" className="text-cyan-300/70 hover:text-white transition-colors">
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">إضافة منتج جديد</h1>
-          <p className="text-sm text-zinc-500">أدخل بيانات المنتج الجديد</p>
+          <p className="text-sm text-cyan-300/60">أدخل بيانات المنتج الجديد</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-sm text-zinc-400 mb-1">اسم المنتج (عربي)</label>
+            <label className="block text-sm text-cyan-300/70 mb-1">اسم المنتج (عربي)</label>
             <input
               type="text"
               required
@@ -104,18 +104,18 @@ export default function AddProductPage() {
               onChange={(e) =>
                 setForm({ ...form, name: e.target.value, slug: e.target.value.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9\u0600-\u06FF-]/g, "") })
               }
-              className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+              className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               placeholder="كاميرا مراقبة 1080p"
             />
           </div>
           <div>
-            <label className="block text-sm text-zinc-400 mb-1">اسم المنتج (إنجليزي)</label>
+            <label className="block text-sm text-cyan-300/70 mb-1">اسم المنتج (إنجليزي)</label>
             <input
               type="text"
               required
               value={form.nameEn}
               onChange={(e) => setForm({ ...form, nameEn: e.target.value })}
-              className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+              className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               placeholder="1080p Security Camera"
             />
           </div>
@@ -123,26 +123,26 @@ export default function AddProductPage() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div>
-            <label className="block text-sm text-zinc-400 mb-1">السعر (ج.م)</label>
+            <label className="block text-sm text-cyan-300/70 mb-1">السعر (ج.م)</label>
             <input
               type="number"
               required
               min="0"
               value={form.price}
               onChange={(e) => setForm({ ...form, price: e.target.value })}
-              className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+              className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
               placeholder="850"
             />
           </div>
           <div>
-            <label className="block text-sm text-zinc-400 mb-1">التصنيف</label>
+            <label className="block text-sm text-cyan-300/70 mb-1">التصنيف</label>
             <select
               value={form.category}
               onChange={(e) => {
                 const cat = categories.find((c) => c.name === e.target.value);
                 if (cat) handleCategoryChange(cat.name, cat.nameEn);
               }}
-              className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-zinc-400"
+              className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
               {categories.map((cat) => (
                 <option key={cat.nameEn} value={cat.name}>{cat.name}</option>
@@ -155,83 +155,83 @@ export default function AddProductPage() {
                 type="checkbox"
                 checked={form.featured}
                 onChange={(e) => setForm({ ...form, featured: e.target.checked })}
-                className="rounded border-zinc-700 bg-zinc-800 text-white focus:ring-zinc-400"
+                className="rounded border-cyan-700 bg-cyan-950 text-cyan-400 focus:ring-cyan-400"
               />
-              <span className="text-sm text-zinc-400">منتج مميز</span>
+              <span className="text-sm text-cyan-300/70">منتج مميز</span>
             </label>
           </div>
         </div>
 
         <div>
-          <label className="block text-sm text-zinc-400 mb-1">الوصف</label>
+          <label className="block text-sm text-cyan-300/70 mb-1">الوصف</label>
           <textarea
             required
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
             rows={3}
-            className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 resize-none"
+            className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none"
             placeholder="وصف المنتج..."
           />
         </div>
 
         <div>
-          <label className="block text-sm text-zinc-400 mb-2">المميزات</label>
+          <label className="block text-sm text-cyan-300/70 mb-2">المميزات</label>
           {form.features.map((feature, i) => (
             <div key={i} className="flex items-center gap-2 mb-2">
               <input
                 type="text"
                 value={feature}
                 onChange={(e) => handleFeatureChange(i, e.target.value)}
-                className="flex-1 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                className="flex-1 rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 placeholder={`ميزة ${i + 1}`}
               />
               {form.features.length > 1 && (
-                <button type="button" onClick={() => removeFeature(i)} className="text-zinc-500 hover:text-red-400 text-sm">
+                <button type="button" onClick={() => removeFeature(i)} className="text-cyan-400/60 hover:text-red-400 text-sm">
                   حذف
                 </button>
               )}
             </div>
           ))}
-          <button type="button" onClick={addFeature} className="text-sm text-zinc-400 hover:text-white transition-colors">
+          <button type="button" onClick={addFeature} className="text-sm text-cyan-300/70 hover:text-white transition-colors">
             + إضافة ميزة
           </button>
         </div>
 
         <div>
-          <label className="block text-sm text-zinc-400 mb-1">رابط الصورة</label>
+          <label className="block text-sm text-cyan-300/70 mb-1">رابط الصورة</label>
           <input
             type="text"
             value={form.images[0]}
             onChange={(e) => setForm({ ...form, images: [e.target.value] })}
-            className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+            className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             placeholder="/images/placeholder-product.svg"
           />
-          <p className="mt-1 text-xs text-zinc-600">يمكنك استخدام رابط خارجي أو مسار محلي</p>
+          <p className="mt-1 text-xs text-cyan-500/60">يمكنك استخدام رابط خارجي أو مسار محلي</p>
         </div>
 
         <div>
-          <label className="block text-sm text-zinc-400 mb-1">رسالة واتساب (اختياري)</label>
+          <label className="block text-sm text-cyan-300/70 mb-1">رسالة واتساب (اختياري)</label>
           <input
             type="text"
             value={form.whatsappMessage}
             onChange={(e) => setForm({ ...form, whatsappMessage: e.target.value })}
-            className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+            className="w-full rounded-lg border border-cyan-700 bg-cyan-950 px-4 py-2.5 text-sm text-white placeholder-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             placeholder="أريد حجز موعد لتركيب ..."
           />
         </div>
 
-        <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
+        <div className="flex items-center gap-3 pt-4 border-t border-cyan-900/50">
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-2.5 text-sm font-medium text-black transition-all hover:bg-zinc-200 disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-6 py-2.5 text-sm font-medium text-white transition-all hover:bg-cyan-500 disabled:opacity-50"
           >
             <Save className="h-4 w-4" />
             {loading ? "جاري الحفظ..." : "حفظ المنتج"}
           </button>
           <Link
             href="/primeadmin"
-            className="text-sm text-zinc-400 hover:text-white transition-colors"
+            className="text-sm text-cyan-300/70 hover:text-white transition-colors"
           >
             إلغاء
           </Link>

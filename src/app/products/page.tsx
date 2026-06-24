@@ -30,7 +30,7 @@ export default async function ProductsPage({ searchParams }: Props) {
         <h1 className="text-2xl font-bold text-white sm:text-3xl">
           {activeCategory ? activeCategory.name : "جميع المنتجات"}
         </h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-cyan-300/60">
           {activeCategory
             ? `تصفح منتجات ${activeCategory.name}`
             : "تصفح جميع المنتجات والحلول الأمنية"} ({filtered.length} منتج)
@@ -43,8 +43,8 @@ export default async function ProductsPage({ searchParams }: Props) {
           href="/products"
           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
             !category
-              ? "border-white bg-white text-black"
-              : "border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
+              ? "border-cyan-500 bg-cyan-600 text-white"
+              : "border-cyan-900 text-cyan-300/70 hover:border-cyan-700 hover:text-white"
           }`}
         >
           الكل
@@ -55,8 +55,8 @@ export default async function ProductsPage({ searchParams }: Props) {
             href={`/products?category=${cat.nameEn}`}
             className={`rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
               category === cat.nameEn
-                ? "border-white bg-white text-black"
-                : "border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
+                ? "border-cyan-500 bg-cyan-600 text-white"
+                : "border-cyan-900 text-cyan-300/70 hover:border-cyan-700 hover:text-white"
             }`}
           >
             {categoryIcons[cat.nameEn] || ""} {cat.name}

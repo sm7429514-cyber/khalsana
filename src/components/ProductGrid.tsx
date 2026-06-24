@@ -11,7 +11,7 @@ export default function ProductGrid({ products, title, subtitle }: ProductGridPr
   if (products.length === 0) {
     return (
       <div className="text-center py-16">
-        <p className="text-zinc-500">لا توجد منتجات متاحة حالياً</p>
+        <p className="text-cyan-300/60">لا توجد منتجات متاحة حالياً</p>
       </div>
     );
   }
@@ -21,7 +21,7 @@ export default function ProductGrid({ products, title, subtitle }: ProductGridPr
       {title && (
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-2 text-sm text-zinc-500">{subtitle}</p>}
+          {subtitle && <p className="mt-2 text-sm text-cyan-300/60">{subtitle}</p>}
         </div>
       )}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

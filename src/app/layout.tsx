@@ -34,7 +34,7 @@ export default function RootLayout({
       dir="rtl"
       className={`${cairo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-zinc-100 font-sans">
+      <body className="min-h-full flex flex-col bg-black text-cyan-50 font-sans">
         <FacebookPixel />
         <Header />
         <main className="flex-1">{children}</main>

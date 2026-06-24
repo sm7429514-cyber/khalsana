@@ -25,7 +25,7 @@ export default function WhatsAppButton({
       href={getWhatsAppLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 font-medium text-white transition-all hover:bg-emerald-500 hover:shadow-lg hover:shadow-emerald-600/25 ${sizeClasses[size]}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-600 font-medium text-white transition-all hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-600/25 ${sizeClasses[size]}`}
     >
       <MessageCircle className="h-5 w-5" />
       {label}

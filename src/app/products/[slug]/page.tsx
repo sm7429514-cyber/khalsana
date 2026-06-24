@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
-      <nav className="mb-8 flex items-center gap-2 text-sm text-zinc-500">
+      <nav className="mb-8 flex items-center gap-2 text-sm text-cyan-300/60">
         <Link href="/" className="hover:text-white transition-colors">
           الرئيسية
         </Link>
@@ -54,13 +54,13 @@ export default async function ProductPage({ params }: Props) {
           {product.category}
         </Link>
         <span>/</span>
-        <span className="text-zinc-400">{product.name}</span>
+        <span className="text-cyan-300/80">{product.name}</span>
       </nav>
 
       {/* Product Detail */}
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         {/* Image */}
-        <div className="aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+        <div className="aspect-square overflow-hidden rounded-xl border border-cyan-900/50 bg-cyan-950/30">
           <Image
             src={product.images[0]}
             alt={product.name}
@@ -74,7 +74,7 @@ export default async function ProductPage({ params }: Props) {
         {/* Info */}
         <div className="flex flex-col gap-6">
           <div>
-            <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+            <span className="text-xs font-medium text-cyan-400/60 uppercase tracking-wider">
               {product.category}
             </span>
             <h1 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
@@ -84,10 +84,10 @@ export default async function ProductPage({ params }: Props) {
 
           <p className="text-3xl font-bold text-white">
             {product.price.toLocaleString("ar-EG")}{" "}
-            <span className="text-base font-normal text-zinc-500">ج.م</span>
+            <span className="text-base font-normal text-cyan-400/60">ج.م</span>
           </p>
 
-          <p className="text-sm text-zinc-400 leading-relaxed border-t border-b border-zinc-800 py-4">
+          <p className="text-sm text-cyan-300/70 leading-relaxed border-t border-b border-cyan-900 py-4">
             {product.description}
           </p>
 
@@ -96,8 +96,8 @@ export default async function ProductPage({ params }: Props) {
             <h3 className="text-sm font-semibold text-white mb-3">المميزات:</h3>
             <ul className="space-y-2">
               {product.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-zinc-400">
-                  <Check className="mt-0.5 h-4 w-4 text-emerald-500 shrink-0" />
+                <li key={i} className="flex items-start gap-2 text-sm text-cyan-300/70">
+                  <Check className="mt-0.5 h-4 w-4 text-cyan-400 shrink-0" />
                   {feature}
                 </li>
               ))}
@@ -105,8 +105,8 @@ export default async function ProductPage({ params }: Props) {
           </div>
 
           {/* WhatsApp CTA */}
-          <div className="mt-4 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
-            <p className="text-sm text-zinc-400 mb-4">
+          <div className="mt-4 rounded-xl border border-cyan-900/50 bg-cyan-950/30 p-6">
+            <p className="text-sm text-cyan-300/70 mb-4">
               للاستفسار أو حجز موعد للتركيب، تواصل معنا عبر واتساب:
             </p>
             <WhatsAppButton
@@ -133,7 +133,7 @@ export default async function ProductPage({ params }: Props) {
       <div className="mt-8 text-center">
         <Link
           href="/products"
-          className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-cyan-300/70 hover:text-white transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           العودة إلى جميع المنتجات

@@ -22,7 +22,7 @@ export default function PrimeAdminPage() {
   if (!ready) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
-        <p className="text-zinc-500">جاري التحميل...</p>
+        <p className="text-cyan-400/60">جاري التحميل...</p>
       </div>
     );
   }
